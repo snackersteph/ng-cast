@@ -12,9 +12,8 @@ angular.module('video-player')
 
     this.currVideo = window.exampleVideoData[0];
 
-    ctrl.setCurrVideo = function(passedVideo) {
-      console.log('setCurrVideo Called');
-      debugger;
+    ctrl.setCurrVideo = (passedVideo) => {
+      console.log(passedVideo);
       this.currVideo = passedVideo;
     };
   },
