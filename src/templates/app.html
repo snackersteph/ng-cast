@@ -7,13 +7,13 @@
   <div class="row">
     <div class="col-md-7">
       <video-player
-        video-play="$ctrl.currVideo"
+        current-video="$ctrl.currentVideo"
       ></video-player>
     </div>
     <div class="col-md-5">
       <video-list
         videos="$ctrl.videos"
-        set-video="$ctrl.setCurrVideo()"
+        select-video="$ctrl.selectVideo"
       ></video-list>
     </div>
   <div>

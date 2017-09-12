@@ -3,7 +3,7 @@ angular.module('video-player')
 .component('videoPlayer', {
 
   bindings: {
-    videoPlay: '<'
+    currentVideo: '<'
   },
 
   controller: function() {
@@ -13,6 +13,7 @@ angular.module('video-player')
     this.getIFrameSrc = function(videoId) {
       return 'https://www.youtube.com/embed/' + videoId;
     };
+    // this.video = {};
   },
 
   templateUrl: 'src/templates/videoPlayer.html'

@@ -7,15 +7,15 @@ angular.module('video-player')
   // },
 
   controller: function() {
-    var ctrl = this;
     this.videos = window.exampleVideoData;
+    this.currentVideo = this.videos[0];
 
-    this.currVideo = window.exampleVideoData[0];
-
-    ctrl.setCurrVideo = (passedVideo) => {
-      console.log(passedVideo);
-      this.currVideo = passedVideo;
+    this.selectVideo = (index) => {
+      console.log('selectVideo called');
+      this.currentVideo = this.videos[index];
     };
+
+    this.searchResults = function() {};
   },
 
   templateUrl: 'src/templates/app.html'
