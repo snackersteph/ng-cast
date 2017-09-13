@@ -1,22 +1,34 @@
 angular.module('video-player')
 
-.component('app', {
+  .component('app', {
 
-  // bindings: {
-    // testVideos: '<'
-  // },
+    controller: function(youTube) {
+      
+      this.$onInit = function () {};
 
-  controller: function() {
-    this.videos = window.exampleVideoData;
-    this.currentVideo = this.videos[0];
+      this.videos = window.exampleVideoData;
+      this.currentVideo = this.videos[0];
+      
+      // this.searchYoutube = function (querySelector) {
+      //   var results = youTube.searchYouTube(querySelector);
+      // };
 
-    this.selectVideo = (index) => {
-      console.log('selectVideo called');
-      this.currentVideo = this.videos[index];
-    };
+      this.selectVideo = (url) => {
+        console.log(url);
 
-    this.searchResults = function() {};
-  },
+        for ( var i = 0; i < this.videos.length; i++ ) {
+          if ( this.videos[i].id.videoId === url ) {
+            this.currentVideo = this.videos[i];
+          }
+        }
+      };
 
-  templateUrl: 'src/templates/app.html'
-});
+      this.searchResults = function(resultsArray) {
+        console.log(resultsArray);
+        this.videos = resultsArray;
+        this.currentVideo = resultsArray[0];
+      }.bind(this);
+    },
+
+    templateUrl: 'src/templates/app.html'
+  });
